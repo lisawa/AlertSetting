@@ -1,0 +1,11 @@
+.EventNav{
+    height: 30px;
+    line-height:30px;
+    margin-bottom: 5px;
+    background-color:lightGray;
+    transition:background-color 0.2s;
+}
+
+.EventNav:hover{
+    background-color:gray;
+}

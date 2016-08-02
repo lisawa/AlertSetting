@@ -1,0 +1,31 @@
+
+.TaskEventMenu{
+    height: 30px;
+    background-color:pink;
+}
+
+
+.TaskNav{
+    height: 30px;
+    line-height:30px;
+    border: 1px solid #bbbbbb;
+    background-color:DarkGray;
+    transition:background-color 0.2s;
+}
+
+.TaskNav:hover{
+    background-color:gray;
+}
+
+.TaskEventNav{
+    height: 30px;
+    line-height:30px;
+    border: 1px solid #bbbbbb;
+    padding-left:20px;
+    background-color:lightGray;
+    transition:background-color 0.2s;
+}
+
+.TaskEventNav:hover{
+    background-color:gray;
+}

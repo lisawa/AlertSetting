@@ -1,0 +1,38 @@
+
+.ContentSetting{
+    Line-height:30px;
+    height:100%;
+    background-color:white;
+}
+
+.ActionForm{
+    padding:10px;
+}
+
+.ActionFormList{
+    border-style:solid;
+    border-color:transparent transparent rgba(200,200,200,0.5) transparent;
+    border-width:3px;
+}
+
+.ActionFormDesc{
+    display: inline-block;
+    background-color: transparent;
+    border-style: none solid none none;
+    border-color:  rgba(200,200,200,0.5);
+    width:150px;
+}
+
+.ActionFormInput{
+    background-color: transparent;
+    border-style: none;
+    border-color:  rgba(200,200,200,0.5);
+    height:30px;
+    font-size:16pt;
+    width:500px;
+}
+
+.ActionFormInput:focus{
+    background-color:rgba(230,230,230,1);
+    outline:none;
+}

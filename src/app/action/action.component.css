@@ -1,0 +1,21 @@
+.routerLink{
+    display:inline-block;
+    height:30pt;
+    line-height:10pt;
+    font-size:18pt;
+    width:200px;
+    background-color:lightgray;
+    text-decoration:none;
+    border:1px solid black;
+}
+
+.routerIcon{
+    float:left;
+    width:40px;
+    height:40px;
+}
+
+.routerDesc{
+    line-height:30pt;
+    float:left;
+}

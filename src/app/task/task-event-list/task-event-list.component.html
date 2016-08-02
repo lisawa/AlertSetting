@@ -1,0 +1,12 @@
+<div class="TaskEventMenu">
+    <button style="width:30px; padding-left:0px; "><img src="/app/SVG/add.svg" width="25px" height="25px" /></button>
+</div>
+<div class="TaskEventNavContent">
+    <div *ngFor="let t of TaskList">
+        <div class="TaskNav" (click)="ChangeDisplay(t)">{{t.Description}}</div>
+        <div class="TaskEventNav" *ngFor="let e of t.EventList" [hidden]="!t.Display" (click)="SelectedEvent(e)">
+            {{e.EventDescription}}
+        </div>
+        <div class="TaskEventNav" [hidden]="!t.Display"  *ngIf="t.EventList.length === 0">尚無Event</div>
+    </div>
+</div>

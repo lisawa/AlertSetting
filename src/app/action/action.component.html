@@ -1,0 +1,25 @@
+<div style="width:20%; height:100%; float:left; background-color:lightgreen;" >
+  <div style="padding:15px;">
+    <nav>
+      <a class="routerLink" [routerLink]="['Line']">
+          <img src="/app/SVG/line.svg" class="routerIcon">
+          <div class="routerDesc">Line</div>
+      </a>
+      <a class="routerLink" [routerLink]="['WeChat']">
+          <img src="/app/SVG/WeChat.svg" class="routerIcon">
+          <span class="routerDesc">WeChat</span>
+      </a>
+      <a class="routerLink" [routerLink]="['EMail']">
+          <img src="/app/SVG/mail.svg" class="routerIcon">
+          <span class="routerDesc">EMail</span>
+      </a>
+      <a class="routerLink" [routerLink]="['Option']">
+          <img src="/app/SVG/setting.svg" class="routerIcon">
+          <span class="routerDesc">Option</span>
+      </a>
+    </nav>
+  </div>
+</div>
+<div style="width:80%; height:100%; float:right;">
+  <router-outlet></router-outlet>
+</div>

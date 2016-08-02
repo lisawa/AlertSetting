@@ -1,0 +1,31 @@
+
+<div style="width:20%; height:100%; float:left; background-color:lightyellow;">
+    <div style="width:100%; height:50%; background-color:pink;">
+      
+      <event-template-list EventTemplateList [TemplateList]="EventData"
+      (OnSelected)="GetSelectedTemplate($event)"></event-template-list>
+      <!--
+        <EventTemplateList [TemplateList]="EventData"
+            (OnSelected)="GetSelectedTemplate($event)"></EventTemplateList>
+      -->
+    </div>
+    <div style="width:100%; height:50%; background-color:lightblue;">
+      
+      <event-check-list [CheckGroupList]="SelectedGroup"
+        (OnSelected)="GetSelectedCheck($event)"></event-check-list>
+      <!--
+        <EventCheckList [CheckGroupList]="SelectedGroup"
+        (OnSelected)="GetSelectedCheck($event)"></EventCheckList>
+      -->
+    </div>
+</div>
+
+<div style="width:80%; height:100%; float:left; background-color:lightgreen;"
+    >
+    <!--<event-setting [NowSettingEvent]= "NowSettingEvent"></event-setting>-->
+    <check-setting [CheckGroup]="NowSettingCheck"></check-setting>
+    <!--
+    <EventSetting *ngIf="NowContentType === 'Event'" [NowSettingEvent]="NowSettingEvent"></EventSetting>
+    <CheckSetting *ngIf="NowContentType === 'Check'" [CheckGroup]="NowSettingCheck"></CheckSetting>
+    -->
+</div>

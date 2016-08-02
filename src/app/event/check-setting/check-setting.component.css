@@ -1,0 +1,30 @@
+
+.EventSettingColumnName{
+    display:inline-block;
+    width:120px;
+    height:40px;
+    line-height:40px;
+    border-style:solid;
+    border-width:2px;
+    border-color:transparent lightgray transparent transparent;
+}
+
+.EventSettingList{
+    border-style:solid;
+    border-width:3px;
+    border-color:transparent transparent lightgray transparent;
+}
+
+.EventSettingInput{
+    background-color: transparent;
+    border-style: none;
+    border-color:  rgba(200,200,200,0.5);
+    height:30px;
+    font-size:16pt;
+    width:500px;
+}
+
+.EventSettingInput:focus{
+    outline:none;
+    background-color:rgba(230,230,230,1);
+}

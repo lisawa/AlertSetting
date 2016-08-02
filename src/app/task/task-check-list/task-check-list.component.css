@@ -1,0 +1,16 @@
+
+.TaskCheckListNavContent{
+    padding:5px;
+}
+
+.TaskCheckListNav{
+    height: 30px;
+    line-height:30px;
+    border: 1px solid #bbbbbb;
+    background-color:DarkGray;
+    transition:background-color 0.2s;
+}
+
+.TaskCheckListNav:hover{
+    background-color:gray;
+}

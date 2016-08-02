@@ -1,0 +1,8 @@
+<div [ngStyle]="{'height': TopBarHeight + 'px', 'overflow':'hidden'}">
+    <topbar (SelectPage)="OnSelectPage($event)"></topbar>
+</div>
+
+<div
+ [ngStyle]="{'height': ViewHeight + 'px', 'background-color': '#94716d'}">
+    <router-outlet></router-outlet>
+</div>
