@@ -1,0 +1,35 @@
+<div>
+
+    <button type="button" class="btn btn-default" (click)="modal1.open()">Add RuleTask</button>
+
+    <modal #modal1>
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">RuleTask</h4>
+        </modal-header>
+        <modal-body>
+            <div>
+                <span>Rule</span>
+                <select [(ngModel)]="selectedRule">
+                    <option *ngFor="let rule of rules" [ngValue]="rule">{{rule}}</option>
+                </select>                
+            </div>
+            <div>
+                <span>Task</span>
+                <select [(ngModel)]="selectedTask">
+                    <option *ngFor="let task of tasks" [ngValue]="task">{{task}}</option>
+                </select>
+            </div>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal1.dismiss()">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="modal1.close()">Ok</button>
+        </modal-footer>   
+    </modal>
+
+    <div *ngFor="let r of ruleList">
+        <h2 (click)="ChangeDisplay(r)">{{r.RuleName}}</h2>
+        <div *ngFor="let t of r.TaskList" [hidden]="!r.Display" (click)="SelectedEvent(t)">
+            {{t.TaskName}}
+        </div>
+    </div>
+</div>
