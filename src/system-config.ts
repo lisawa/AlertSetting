@@ -9,10 +9,12 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+    'ng2-bs3-modal': 'vendor/ng2-bs3-modal'
 };
 
 /** User packages configuration. */
 const packages: any = {
+    'ng2-bs3-modal': { main: 'ng2-bs3-modal.js', defaultExtension: 'js' },
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
