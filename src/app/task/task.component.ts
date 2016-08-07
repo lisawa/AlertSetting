@@ -1,13 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { TaskData } from './TaskData';
+import { TaskModel } from './TaskData';
 import { TaskEventData } from './TaskEventData';
 import { TaskCheckData } from './TaskCheckData';
+import { TaskData } from '../Model/task-data';
 
 import { TaskCheckListComponent } from './task-check-list/task-check-list.component';
 import { TaskEventListComponent } from './task-event-list/task-event-list.component';
 import { TaskSettingComponent } from './task-setting/task-setting.component';
 import { EventSettingComponent } from './event-setting/event-setting.component'
+
+import { TaskService } from './task.service';
 
 @Component({
   moduleId: module.id,
@@ -20,12 +23,16 @@ import { EventSettingComponent } from './event-setting/event-setting.component'
       TaskSettingComponent,
       EventSettingComponent,
       ],
+  providers: [TaskService],
 })
 export class TaskComponent implements OnInit {
-  @Input() TaskList: TaskData[];
+  @Input() TaskList: TaskModel[];
   @Input() CheckGroupOnSelect: TaskCheckData[];
   @Input() CheckDataOnSelect: TaskCheckData;
   @Input() SelectedCheckName: string;
+  @Input() TaskDataList: any;//TaskData[];
+  sub: any;
+  error: any;
 
   GetSelectedCheckGroup(c: TaskCheckData[]){
       this.CheckGroupOnSelect = c;
@@ -35,7 +42,14 @@ export class TaskComponent implements OnInit {
       this.SelectedCheckName = c.Description;
   }
 
-  constructor(){
+  constructor(private taskService: TaskService){
+      this.sub = this.taskService.GetTask().then(
+          td => {
+              this.TaskDataList = td;
+              console.log(this.TaskDataList);
+          }
+      )
+
       this.TaskList = [
           {
               TaskName:'01_HoldLotCheck',

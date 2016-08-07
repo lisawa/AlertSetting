@@ -8,6 +8,10 @@ import { EventCheckListComponent } from './event-check-list/event-check-list.com
 import { EventSettingComponent } from './event-setting/event-setting.component';
 import { CheckSettingComponent } from './check-setting/check-setting.component'; 
 
+import { EventService } from './event.service';
+//import { TaskData } from './task-data';
+import { Http, Response, Headers } from '@angular/http';
+
 @Component({
   moduleId: module.id,
   selector: 'app-event',
@@ -20,11 +24,14 @@ import { CheckSettingComponent } from './check-setting/check-setting.component';
       EventSettingComponent,
       CheckSettingComponent,
     ],
+  providers:[ EventService ],
 })
-export class EventComponent implements OnInit {
 
-  ngOnInit() {
-  }
+
+export class EventComponent implements OnInit {
+  error: any;
+  sub: any;
+  //tl: TaskData[];
 
   @Input() EventData: EventTemplateData[];
   @Input() NowSettingEvent:EventTemplateData;
@@ -33,18 +40,29 @@ export class EventComponent implements OnInit {
   @Input() NowSelectedCheck: string;
   @Input() NowContentType: string;
 
+  ngOnInit() {
+      /*
+      this.sub = this.service.GetTask().then(td => {
+            this.tl = td;
+            console.log(this.tl);
+      });
+      */
+  }
+
   GetSelectedTemplate(value: EventTemplateData){
       this.NowContentType = 'Event';
       this.SelectedGroup = value.CheckList;
       this.NowSettingEvent = value;
+      console.log(this.NowContentType);
   }
 
   GetSelectedCheck(value: CheckGroupData){
       this.NowContentType = 'Check';
       this.NowSettingCheck = value;
+      console.log(this.NowContentType);
   }
 
-    constructor(){
+    constructor(private service: EventService,private http: Http){
       this.NowContentType = 'Check';
       this.EventData = [
           {

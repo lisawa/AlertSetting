@@ -1,5 +1,5 @@
 <div style="padding:5px;">
-    <div class="EventNav" *ngFor="#cg of CheckGroupList"
+    <div class="EventNav" *ngFor="let cg of CheckGroupList"
     (click)="OnSelectedCheck(cg)">
         {{cg.Caption}}
     </div>
