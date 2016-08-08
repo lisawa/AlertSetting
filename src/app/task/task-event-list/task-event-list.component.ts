@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import {TaskData} from '../TaskData';
+import { TaskModel } from '../TaskData';
 import {TaskEventData} from '../TaskEventData';
 
 @Component({
@@ -10,10 +10,10 @@ import {TaskEventData} from '../TaskEventData';
   styleUrls: ['task-event-list.component.css']
 })
 export class TaskEventListComponent implements OnInit {
-    @Input() TaskList: TaskData[];
+    @Input() TaskList: TaskModel[];
     @Output() OnSelectCheckGroup = new EventEmitter(); 
 
-    ChangeDisplay(task:TaskData){
+    ChangeDisplay(task:TaskModel){
         task.Display = !task.Display;
     }
 
